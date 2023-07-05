@@ -14,6 +14,18 @@ class FindRegex extends EventEmitter {
   }
 
   find () {
+    console.log('find')
+
+    process.nextTick(() => console.log("nextTick emit", this.emit('nextTick_start', this.files)));
+
+    Promise.resolve().then(() => {
+      console.log("promise emit", this.emit('promise_start', this.files));
+    });
+
+    new Promise((resolve, reject) => {
+      resolve();
+    }).then(() => console.log("new promise emit", this.emit('new_promise_start', this.files)));
+
     for (const file of this.files) {
       readFile(file, 'utf8', (err, content) => {
         if (err) {
@@ -39,3 +51,6 @@ findRegexInstance
   .find()
   .on('found', (file, match) => console.log(`Matched "${match}" in file ${file}`))
   .on('error', err => console.error(`Error emitted ${err.message}`))
+  .on('nextTick_start', files => console.log(`(nextTick) Started find in ${files}`))
+  .on('new_promise_start', files => console.log(`(new_promise) Started find in ${files}`))
+  .on('promise_start', files => console.log(`(promise) Started find in ${files}`));
