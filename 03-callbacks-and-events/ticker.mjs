@@ -12,9 +12,11 @@ function ticker(number, callback) {
   setTimeout(() => callback(tick_count), number);
 
   const ticker50 = () => {
-    setTimeout(() => {
+    process.nextTick(() => {
       emitter.emit('tick');
       tick_count++;
+    });
+    setTimeout(() => {
       ticker50();
     }, 50);
   };
