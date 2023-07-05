@@ -16,9 +16,10 @@ function ticker(number, callback) {
       const t = new Date();
       if (t%5 === 0) {
         emitter.emit('error', new Error('tick error'));
+      } else {
+        emitter.emit('tick', t);
+        tick_count++;
       };
-      emitter.emit('tick', t);
-      tick_count++;
     });
     setTimeout(() => {
       ticker50();
