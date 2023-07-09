@@ -1,4 +1,5 @@
 import { readdir, writeFile } from 'fs';
+import { promisify } from 'util';
 
 /**
  * ### 로컬 파일시스템의 디렉터리경로를 입력으로 받으며 비동기적으로 반복하여 발견되는 모든 서브 디렉터리를 비동기적으로 반환.
@@ -61,18 +62,16 @@ function listNestedFiles(dir, cb) {
 //--------------------------------------------------------------------------------
 
 
-
-listNestedFiles('../', (err, result) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-
-  writeFile('./listNestedFiles.json', JSON.stringify(result, null, 2), (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log('done');
-  });
+// 실행 하는 부분은 promisify 이용해보았다.
+promisify(listNestedFiles)('../')
+.then(result => {
+  promisify(writeFile)(
+    './listNestedFiles.json',
+    JSON.stringify(result, null, 2)
+  ).then(
+    () => console.log('done'),
+    err => console.error(err)
+  );
+}).catch(err => {
+  console.error(err);
 });
