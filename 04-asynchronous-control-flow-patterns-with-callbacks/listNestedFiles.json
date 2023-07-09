@@ -1,0 +1,262 @@
+{
+  "02-the-module-system": {
+    "01-revealing-module-pattern": {},
+    "02-module-loader": {},
+    "03-cjs-circular-dependency": {},
+    "04-cjs-named-exports": {},
+    "05-cjs-exporting-a-function": {},
+    "06-cjs-exporting-a-constructor": {},
+    "07-cjs-exporting-an-instance": {},
+    "08-cjs-monkey-patching": {},
+    "09-esm-syntax": {},
+    "10-esm-default": {},
+    "11-esm-async-imports": {},
+    "12-esm-mixed-exports": {},
+    "13-esm-read-only-live-bindings": {},
+    "14-esm-circular-dependency": {},
+    "15-esm-modifying-other-modules": {},
+    "16-esm-cjs-interop": {}
+  },
+  "03-callbacks-and-events": {
+    "01-sync-cps": {},
+    "02-async-cps": {},
+    "03-non-cps": {},
+    "04-an-unpredictable-function": {},
+    "05-fix-zalgo-with-sync-api": {},
+    "06-deferred-execution": {},
+    "07-propagating-errors": {},
+    "08-uncaught-errors": {},
+    "09-eventemitter-find-regex": {},
+    "10-eventemitter-extend": {},
+    "11-eventemitter-sync-emit": {},
+    "12-events-vs-callbacks": {},
+    "13-events-plus-callbacks": {
+      "data": {}
+    }
+  },
+  "04-asynchronous-control-flow-patterns-with-callbacks": {
+    "01-web-spider": {},
+    "02-web-spider-functions": {},
+    "03-sequential-callbacks": {},
+    "04-web-spider-v2": {},
+    "05-callback-iteration-pattern": {},
+    "06-web-spider-v3": {},
+    "07-callback-unlimited-parallel-execution-pattern": {},
+    "08-callback-limited-parallel-execution-pattern": {},
+    "09-queue-limited-parallel-execution-pattern": {},
+    "10-queue-limited-parallel-execution-with-events": {},
+    "11-web-spider-v4": {},
+    "srcFiles": {}
+  },
+  "05-asynchronous-control-flow-patterns-with-promises-and-async-await": {
+    "01-delay-with-promises": {},
+    "02-promisify": {},
+    "03-promises-web-spider-v2": {},
+    "04-promises-web-spider-v3": {},
+    "05-promises-web-spider-v4": {},
+    "06-asyncawait-delay": {},
+    "07-asyncawait-errors": {},
+    "08-asyncawait-return-await-trap": {},
+    "09-asyncawait-web-spider-v2": {},
+    "10-asyncawait-web-spider-v3": {},
+    "11-asyncawait-web-spider-v4": {},
+    "12-promises-recursion-leak": {}
+  },
+  "06-coding-with-streams": {
+    "01-gzip-buffer-vs-stream": {},
+    "02-gzip-server": {
+      "received_files": {}
+    },
+    "03-crypto-gzip-server": {
+      "received_files": {}
+    },
+    "04-readable-non-flowing": {},
+    "05-readable-flowing": {},
+    "06-readable-async-iterator": {},
+    "07-custom-readable": {},
+    "08-custom-readable-from-iterable": {},
+    "09-writable-http-entropy-server": {},
+    "10-writable-http-entropy-server-backpressure": {},
+    "11-custom-writable-to-file-stream": {},
+    "12-transform-stream-replace": {},
+    "13-transform-filter-reduce": {},
+    "14-passthrough-monitoring": {},
+    "15-passthrough-late-piping": {
+      "received_files": {}
+    },
+    "15-passthrough-late-piping-alternative": {
+      "received_files": {}
+    },
+    "16-connecting-streams-using-pipes": {},
+    "17-pipeline-helper": {},
+    "18-sequential-execution": {},
+    "19-unordered-parallel-execution": {},
+    "20-unordered-limited-parallel-execution": {},
+    "21-ordered-parallel-execution": {},
+    "22-combined-stream": {},
+    "23-forking-streams": {},
+    "24-merging-streams": {},
+    "25-multiplexing": {}
+  },
+  "07-creational-design-patterns": {
+    "01-factory-simple": {},
+    "02-factory-dynamic-class": {},
+    "03-factory-encapsulation": {},
+    "04-factory-example-profiler": {},
+    "05-builder-url-builder": {},
+    "06-revealing-constructor-immutable-buffer": {},
+    "07-singleton-false-uniqueness": {
+      "node_modules": {
+        "package-a": {
+          "node_modules": {
+            "mydb": {}
+          }
+        },
+        "package-b": {
+          "node_modules": {
+            "mydb": {}
+          }
+        }
+      }
+    },
+    "08-singleton-dependencies": {},
+    "09-dependency-injection": {}
+  },
+  "08-structural-design-patterns": {
+    "01-proxy-composition": {},
+    "02-proxy-object-literal": {},
+    "03-proxy-object-augmentation": {},
+    "04-proxy-es2015": {},
+    "05-proxy-logging-writable-stream": {},
+    "06-proxy-reactive": {},
+    "07-decorator-composition": {},
+    "08-decorator-object-augmentation": {},
+    "09-decorator-es2015": {},
+    "10-decorator-levelup-plugin": {},
+    "11-adapter": {}
+  },
+  "09-behavioral-design-patterns": {
+    "01-strategy-multiformat-config": {
+      "samples": {}
+    },
+    "02-state-failsafe-socket": {},
+    "03-template-multiformat-config": {
+      "samples": {}
+    },
+    "04-iterator-alphabet-iterator": {},
+    "05-iterator-iterable-matrix": {},
+    "06-iterator-builtins": {},
+    "07-iterator-fruit-generator": {},
+    "08-iterator-two-way": {},
+    "09-iterator-matrix-generator": {},
+    "10-async-iterator-check-urls": {},
+    "11-async-generator-check-urls": {},
+    "12-async-iterator-streams": {},
+    "13-middleware-zmq": {},
+    "14-command": {}
+  },
+  "10-universal-javascript": {
+    "01-webpack-intro": {
+      "src": {}
+    },
+    "02-runtime-code-branching": {
+      "src": {}
+    },
+    "03-build-time-code-branching": {
+      "src": {}
+    },
+    "04-module-swapping": {
+      "src": {}
+    },
+    "05-react-hello-world": {
+      "src": {}
+    },
+    "06-react-stateful-component": {
+      "src": {}
+    },
+    "07-frontend-only-app": {
+      "src": {
+        "data": {},
+        "frontend": {
+          "components": {
+            "pages": {}
+          }
+        }
+      }
+    },
+    "08-server-side-rendering": {
+      "src": {
+        "data": {},
+        "frontend": {
+          "components": {
+            "pages": {}
+          }
+        }
+      }
+    },
+    "09-asynchronous-data-retrieval": {
+      "src": {
+        "data": {},
+        "frontend": {
+          "components": {
+            "pages": {}
+          }
+        }
+      }
+    },
+    "10-universal-data-retrieval": {
+      "src": {
+        "data": {},
+        "frontend": {
+          "components": {
+            "pages": {}
+          }
+        }
+      }
+    }
+  },
+  "11-advanced-recipes": {
+    "01-async-init-quick-and-easy": {},
+    "02-async-init-queues": {},
+    "03-async-init-queues-state": {},
+    "04-batching-and-caching": {},
+    "05-canceling-async-simple": {},
+    "06-canceling-async-wrapper": {},
+    "07-canceling-async-generator": {},
+    "08-cpu-bound": {
+      "workers": {}
+    }
+  },
+  "12-scalability-and-architectural-patterns": {
+    "01-plain-http": {},
+    "02-http-cluster": {},
+    "03-http-cluster-resilient": {},
+    "04-http-cluster-zero-downtime": {},
+    "05-http-load-balancer": {},
+    "06-http-dynamic-load-balancer": {},
+    "07-peer-to-peer-load-balancing": {},
+    "08-scaling-an-app-on-kubernetes": {}
+  },
+  "13-messaging-and-integration-patterns": {
+    "01-pubsub-basic-chat": {
+      "www": {}
+    },
+    "02-pubsub-chat-redis": {
+      "www": {}
+    },
+    "03-pubsub-chat-zmq": {
+      "www": {}
+    },
+    "04-pubsub-amqp": {
+      "www": {}
+    },
+    "05-pubsub-redis-streams": {
+      "www": {}
+    },
+    "06-task-distribution-zmq": {},
+    "07-task-distribution-amqp": {},
+    "08-task-distribution-redis-streams": {},
+    "09-correlation-id": {},
+    "10-return-address": {}
+  }
+}
