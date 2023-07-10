@@ -8,7 +8,7 @@ import { promisify } from 'util';
  * 
  * ### => 나는, 객체로 트리구조 표현해서 콜백에 전달하도록 했다.
  * @param {string} dir 
- * @param {*} cb 
+ * @param {(err, dirObj?) => any} cb 
  * @returns {void}
  */
 function listNestedFiles(dir, cb) {
