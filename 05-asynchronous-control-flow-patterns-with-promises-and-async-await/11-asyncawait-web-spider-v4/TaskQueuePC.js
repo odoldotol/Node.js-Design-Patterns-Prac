@@ -9,15 +9,22 @@ export class TaskQueuePC {
     }
   }
 
-  async consumer () {
-    while (true) {
-      try {
-        const task = await this.getNextTask()
-        await task()
-      } catch (err) {
-        console.error(err)
-      }
-    }
+  /**
+   * ### async/await 문법의 사용을 없에고 프로미스만을 사용하기
+   * - 비동기적인 재귀가 되도록 하기
+   * - 재귀적 프로미스 해결의 메모리 누수 버그 없어야함
+   */
+  consumer () {
+    return new Promise(resolve => {
+      this.getNextTask()
+      .then(task => task())
+      .catch(err => console.error(err))
+      .finally(() => { // getNextTask 와 task 가 실패하든 성공하든 이 함수는 재귀적으로 실행되어야함.
+        // resolve(this.consumer()) 는 무한 재귀 프로미스 해결 체인의 메모리 누수 버그를 일으킬 것임.
+        this.consumer()
+        resolve()
+      });
+    });
   }
 
   getNextTask () {
