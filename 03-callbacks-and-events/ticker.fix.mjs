@@ -12,13 +12,13 @@ function ticker(
   let tick_count = 0;
 
   let ticker50 = () => {
-    setTimeout(() => {
-      if (ticker50 !== null) {
+    if (ticker50 !== null) {
+      process.nextTick(() => {
         emitter.emit('tick');
         tick_count++;
-        ticker50();
-      }
-    }, 50);
+      });
+      setTimeout(ticker50, 50);
+    }
   };
 
   setTimeout(() => {
