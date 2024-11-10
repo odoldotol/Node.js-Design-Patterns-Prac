@@ -14,8 +14,13 @@ function ticker(
   let ticker50 = () => {
     if (ticker50 !== null) {
       process.nextTick(() => {
-        emitter.emit('tick');
-        tick_count++;
+        const t = new Date();
+        if (t % 5 === 0) {
+          emitter.emit('error', new Error('tick error'));
+        } else {
+          emitter.emit('tick', t);
+          tick_count++;
+        }
       });
       setTimeout(ticker50, 50);
     }
@@ -35,4 +40,6 @@ const runningTicker = ticker(1000, (tick_count) => {
   console.log(tick_count);
 });
 
-runningTicker.on('tick', () => console.log('tick'));
+runningTicker
+.on('tick', (t) => console.log(t))
+.on('error', (err) => console.error(err.message));
